@@ -8,9 +8,13 @@ async function getWeather(city) {
   const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
   var data = await response.json();
   document.querySelector(".city").innerHTML = data.name;
-  document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-  document.querySelector(".humid").innerHTML = data.main.humidity + "%";
-  document.querySelector(".wind").innerHTML = data.wind.speed + "km/h";
+  document.querySelector(".temp").innerHTML =
+    Math.round(data.main.temp) +
+    `<span style="font-size: 0.65em"><sup>°C</sup></span>`;
+  document.querySelector(".humid").innerHTML =
+    data.main.humidity + `<span style="font-size: 0.65em"><sup>%</sup></span>`;
+  document.querySelector(".wind").innerHTML =
+    data.wind.speed + `<span style="font-size: 0.65em"><sup>km/h</sup></span>`;
 }
 getWeather(a);
 searchBtn.addEventListener("click", () => {
