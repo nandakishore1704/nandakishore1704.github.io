@@ -10,11 +10,11 @@ async function getWeather(city) {
   document.querySelector(".city").innerHTML = data.name;
   document.querySelector(".temp").innerHTML =
     Math.round(data.main.temp) +
-    `<span style="font-size: 0.35em"><sup>°C</sup></span>`;
+    `<span style="font-size: 0.65em"><sup>°C</sup></span>`;
   document.querySelector(".humid").innerHTML =
-    data.main.humidity + `<span style="font-size: 0.35em"><sup>%</sup></span>`;
+    data.main.humidity + `<span style="font-size: 0.65em"><sup>%</sup></span>`;
   document.querySelector(".wind").innerHTML =
-    data.wind.speed + `<span style="font-size: 0.35em"><sup>km/h</sup></span>`;
+    data.wind.speed + `<span style="font-size: 0.65em"><sup>km/h</sup></span>`;
 }
 getWeather(a);
 searchBtn.addEventListener("click", () => {
